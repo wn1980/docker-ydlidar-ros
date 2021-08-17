@@ -1,0 +1,26 @@
+version: '2.3'
+
+# create default network
+networks:
+  default:
+    name: ros-network
+
+volumes:
+  workspace:
+
+services:
+
+  ydlidar:
+    build: ./ydlidar
+    image: wn1980/ydlidar${TAG}
+    container_name: ros_ydlidar
+    init: true
+    restart: "no"
+    privileged: true
+    devices:
+      - "/dev:/dev"
+    volumes:
+      - "/dev:/dev"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      - ROS_MASTER_URI=http://master:11311    
