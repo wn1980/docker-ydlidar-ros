@@ -5,14 +5,11 @@ networks:
   default:
     name: ros-network
 
-volumes:
-  workspace:
-
 services:
 
   ydlidar:
     build: ./ydlidar
-    image: wn1980/ydlidar${TAG}
+    image: wn1980/ydlidar-ros${TAG}
     container_name: ros_ydlidar
     init: true
     restart: "no"
