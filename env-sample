@@ -1,2 +1,2 @@
-TAG=
-#TAG=:arm64
+#TAG=
+TAG=:arm64
